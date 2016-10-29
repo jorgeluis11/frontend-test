@@ -1,5 +1,5 @@
 angular.module("starter")
-.controller("cardGame", function($scope, WordService){
+.controller("cardGame", function($scope, WordService, SweetAlert){
     //Ajax call to get all the words
     $scope.words = WordService.get();
 
@@ -7,8 +7,6 @@ angular.module("starter")
 
     $scope.cardSelected = function(index)
     {
-        console.log(index);
-        console.log($scope.selectedIndex);
         if($scope.selectedIndex == undefined)
             $scope.selectedIndex = index;
         else if($scope.selectedIndex === index)
@@ -17,13 +15,23 @@ angular.module("starter")
         {
             var word1 = $scope.words[$scope.selectedIndex].replace(/(assets\/images\/)|(\.png)|\_| /g,"");
             var word2 = $scope.words[index].replace(/(assets\/images\/)|(\.png)|\_| /g,"");
-            console.log(word1);
-            console.log(word2);
             if(word1 === word2){
                 $scope.words[$scope.selectedIndex] = "";
                 $scope.words[index] = "";
                 $scope.selectedIndex = undefined;
+                SweetAlert.swal({   
+                    title: "Good Job!",  
+                    type: "success", 
+                    // text: "Good Job!",   
+                    timer: 2000,   
+                    showConfirmButton: false });
             }else{
+                SweetAlert.swal({   
+                    title: "Sorry Try Again.",  
+                    type: "error", 
+                    // text: "Good Job!",   
+                    timer: 2000,   
+                    showConfirmButton: false });
                 $scope.selectedIndex = undefined;
             }
         }
