@@ -1,4 +1,10 @@
 angular.module("starter")
-.controller("cardGame", ["$scope", function($scope){
+.controller("cardGame", function($scope, WordService){
     $scope.title = "Card Game";
-}]);
+
+    //Ajax call to get all the words
+    $scope.words = WordService.get();
+
+
+
+});
