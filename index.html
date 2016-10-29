@@ -27,16 +27,19 @@
 
 </head>
 <body ng-app="starter" class="light-blue">
-    <!--<div class="">Good Job!</div>-->
     <div class="container" ng-controller="cardGame" >
         <article class="row">
+            <!-- Ng repeats for all the cards-->
             <section ng-repeat="word in words track by $index" class="col-lg-4 card-height animation">
                 <div ng-show="word" class="animation">
+                    <!--if the card is an image is going to show this div-->
                     <div ng-show="imageOrWord(word)">
                         <div ng-click="cardSelected($index)" ng-class="{'card-selected':selectedIndex === $index, 'card-hover':selectedIndex !== $index}" class="card card-padding-image">
                             <img ng-src="{{word}}" alt="{{word}}">
                         </div>
                     </div>
+
+                    <!--if the card is not an image is going to show this div-->
                     <div ng-hide="imageOrWord(word)">
                         <div ng-click="cardSelected($index)" ng-class="{'card-selected':selectedIndex === $index, 'card-hover':selectedIndex !== $index}" class="card card-padding-word">
                             <h3>

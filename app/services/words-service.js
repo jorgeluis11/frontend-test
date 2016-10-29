@@ -6,7 +6,6 @@ angular.module("starter")
             // It can't be user locally because of Cross origin requests are not allowed'
             // return $http.get('./words.json')
             //         .success(function(result) {
-            //                 console.log(result);
             //             });
             // }
         
