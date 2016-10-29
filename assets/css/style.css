@@ -2,4 +2,11 @@
     background-color: #76dbdc !important;
 }
 
+.card{
+    background-color: white;
+    border-radius: 5px;
+    color: #3a7d7e;
+    text-align: center;
+}
+
 

@@ -2,24 +2,43 @@ angular.module("starter")
 .factory('WordService', function($http) {
     return {
         get: function() {
-        //This should call an http and then return the json needed.
-        // It can't be user locally because of Cross origin requests are not allowed'
-        // return $http.get('./words.json')
-        //         .success(function(result) {
-        //                 console.log(result);
-        //             });
-        // }
-            return [
-                {"word": "pen",
+            //This should call an http and then return the json needed.
+            // It can't be user locally because of Cross origin requests are not allowed'
+            // return $http.get('./words.json')
+            //         .success(function(result) {
+            //                 console.log(result);
+            //             });
+            // }
+        
+
+            //Randomize words
+            var words =  [
+                    {"word": "pen",
                     "image": "images/pen.png"
-                }, 
-                {"word": "blue",
+                    }, 
+                    {"word": "blue",
                     "image": "images/blue.png"
-                },
-                {"word": "to walk",
+                    },
+                    {"word": "to walk",
                     "image": "images/walk.png"
-                }
-            ]
+                    }
+                ]
+            var wordsRandomList = []
+            words.map(function(item){
+                wordsRandomList.push(item.word);
+                wordsRandomList.push(item.image);
+            });
+
+            for (var i = wordsRandomList.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = wordsRandomList[i];
+                wordsRandomList[i] = wordsRandomList[j];
+                wordsRandomList[j] = temp;
+            }
+
+            return wordsRandomList;
         }
+
+        
     }
 });
