@@ -26,20 +26,25 @@
 
 </head>
 <body ng-app="starter" class="light-blue">
-    <div class="container" ng-controller="cardGame" >
+    <div class="container margin-sm-top" ng-controller="cardGame" >
         <article class="row">
-            <section ng-repeat="word in words" ng-click="cardSelected($index)" class="col-lg-3 col-lg-offset-1">
-                <div class="card">
+            <section ng-repeat="word in words track by $index"  class="col-lg-4 card-height">
+                <div ng-show="word">
                     <div ng-show="imageOrWord(word)">
-                        <img ng-src="{{word}}" alt="{{word}}">
+                        <div ng-click="cardSelected($index)" ng-class="{'card-selected':selectedIndex === $index, 'card-hover':selectedIndex !== $index}" class="card card-padding-image">
+                            <img ng-src="{{word}}" alt="{{word}}">
+                        </div>
                     </div>
-                   <div ng-hide="imageOrWord(word)">
-                       <h3>
-                           {{word}}
-                       </h3>
+                <div ng-hide="imageOrWord(word)">
+                     <div ng-click="cardSelected($index)" ng-class="{'card-selected':selectedIndex === $index, 'card-hover':selectedIndex !== $index}" class="card card-padding-word">
+                        <h3>
+                            {{word}}
+                        </h3>
                     </div>
                 </div>
-            </div>
+                </div>
+                
+            </section>
         </article>
     </div>
 </body>

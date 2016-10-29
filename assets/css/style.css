@@ -1,15 +1,59 @@
+.margin-sm-top{
+    margin-top:20px;
+}
+
 .light-blue{
     background-color: #76dbdc !important;
 }
 
 .card{
     background-color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
+    -webkit-box-shadow: -0px 0px 5px 1px rgba(68,68,68,1);
+    -moz-box-shadow: -0px 0px 5px 1px rgba(68,68,68,1);
+    box-shadow: -0px 0px 5px 1px rgba(68,68,68,1);
     color: #3a7d7e;
     text-align: center;
     margin-top: 10px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin:40px;
+    cursor: pointer;
+
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    transition: all .1s ease;
 }
+
+.card-hover:hover { 
+     -webkit-box-shadow: 0px 0px 5px 2px rgba(35,41,41,1);
+-moz-box-shadow: 0px 0px 5px 2px rgba(35,41,41,1);
+box-shadow: 0px 0px 5px 2px rgba(35,41,41,1);
+ }
+
+.card-selected { 
+    
+    transform: scale(1.1); 
+}
+
+
+.card-height{
+    height: 360px;
+}
+
+.card-padding-word{
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.card-padding-image{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
 
 
