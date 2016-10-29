@@ -69,11 +69,6 @@ angular.module("starter")
                     showConfirmButton: false });
                 $scope.selectedIndex = undefined;
             }
-
-
-            
-
-            
         }
     }
 
