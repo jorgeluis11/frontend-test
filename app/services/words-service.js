@@ -14,13 +14,13 @@ angular.module("starter")
             //Randomize words
             var words =  [
                     {"word": "pen",
-                    "image": "images/pen.png"
+                    "image": "assets/images/pen.png"
                     }, 
                     {"word": "blue",
-                    "image": "images/blue.png"
+                    "image": "assets/images/blue.png"
                     },
                     {"word": "to walk",
-                    "image": "images/walk.png"
+                    "image": "assets/images/to_walk.png"
                     }
                 ]
             var wordsRandomList = []

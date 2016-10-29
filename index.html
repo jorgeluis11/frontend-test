@@ -28,10 +28,10 @@
 <body ng-app="starter" class="light-blue">
     <div class="container" ng-controller="cardGame" >
         <article class="row">
-            <section ng-repeat="word in words" ng-click="cardSelected($index)" class="col-lg-4 ">
+            <section ng-repeat="word in words" ng-click="cardSelected($index)" class="col-lg-3 col-lg-offset-1">
                 <div class="card">
                     <div ng-show="imageOrWord(word)">
-                        <img ng-src="word" alt="{{word}}">
+                        <img ng-src="{{word}}" alt="{{word}}">
                     </div>
                    <div ng-hide="imageOrWord(word)">
                        <h3>
