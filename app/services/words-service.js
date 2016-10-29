@@ -10,8 +10,6 @@ angular.module("starter")
             //             });
             // }
         
-
-            //Randomize words
             var words =  [
                     {"word": "pen",
                     "image": "assets/images/pen.png"
@@ -23,12 +21,15 @@ angular.module("starter")
                     "image": "assets/images/to_walk.png"
                     }
                 ]
+
+            //Convert the json to a simple array
             var wordsRandomList = []
             words.map(function(item){
                 wordsRandomList.push(item.word);
                 wordsRandomList.push(item.image);
             });
 
+            //Randomize the array and return that array
             for (var i = wordsRandomList.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
                 var temp = wordsRandomList[i];

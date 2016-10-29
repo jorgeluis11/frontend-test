@@ -1,1 +1,1 @@
-angular.module("starter", ['oitozero.ngSweetAlert']);
+angular.module("starter", ['oitozero.ngSweetAlert', 'ngAnimate']);
